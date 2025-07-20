@@ -1,3 +1,3 @@
-# shopping
+# Shopping
 
-A new Flutter project.
+Este projeto é feito baseado no curso **Dominando Layouts no Flutter** do [balta.io](https://balta.io/).
