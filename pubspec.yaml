@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^10.8.0
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +18,16 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+# Adicionar assets caso seja necessário
+# assets:
+#   - assets/images/
+#   - assets/icons/
+#   - assets/fonts/
+# Para adicionar fontes personalizadas, descomente e configure a seção abaixo
+# fonts: 
+#   - family: CustomFont
+#     fonts:
+#       - asset: assets/fonts/CustomFont.ttf
+#       - asset: assets/fonts/CustomFont.ttf
+

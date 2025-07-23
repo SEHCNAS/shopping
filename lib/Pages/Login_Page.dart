@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -13,6 +14,7 @@ class LoginPage extends StatelessWidget {
           children: <Widget>[
             Container(
               height: 450,
+
               decoration: BoxDecoration(
                 color: Color.fromRGBO(215, 244, 237, 1),
                 boxShadow: [
@@ -25,8 +27,8 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
               child: Padding(
-                padding: EdgeInsets.all(15),
-                child: ListView(
+                padding: EdgeInsets.only(left: 20, right: 20, top: 40),
+                child: Column(
                   children: <Widget>[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,6 +53,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    SizedBox(height: 60),
                     TextFormField(
                       //autofocus: true,
                       keyboardType: TextInputType.emailAddress,
@@ -64,6 +67,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       style: TextStyle(fontSize: 20),
                     ),
+                    SizedBox(height: 10),
                     TextFormField(
                       //autofocus: true,
                       keyboardType: TextInputType.emailAddress,
@@ -78,7 +82,69 @@ class LoginPage extends StatelessWidget {
                       ),
                       style: TextStyle(fontSize: 20),
                     ),
+                    Container(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        child: Text("Esqueci minha senha"),
+                        onPressed: () {
+                          // Implementar ação de esqueci minha senha
+                        },
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Container(
+                      width: double.infinity,
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                          ),
+                        ),
+                        child: Text("Login"),
+                      ),
+                    ),
                   ],
+                ),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 20),
+              child: Text(
+                "- ou -",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+              ),
+            ),
+            SizedBox(height: 20),
+            Container(
+              width: double.infinity,
+              child: TextButton.icon(
+                onPressed: () {},
+                icon: Icon(FontAwesomeIcons.google),
+                label: const Text('Realizar login com Google'),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              child: TextButton.icon(
+                onPressed: () {},
+                icon: Icon(FontAwesomeIcons.facebook),
+                label: const Text(
+                  'Realizar login com Facebook',
+                  style: TextStyle(fontSize: 16),
+                ),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(5)),
+                  ),
                 ),
               ),
             ),
