@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shopping/Pages/Home_Page.dart';
 import 'package:shopping/Pages/Signup_Page.dart';
 
 class LoginPage extends StatelessWidget {
@@ -102,7 +103,14 @@ class LoginPage extends StatelessWidget {
                       Container(
                         width: double.infinity,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => HomePage(),
+                              ),
+                            );
+                          },
                           style: TextButton.styleFrom(
                             backgroundColor: Colors.white,
                             shape: const RoundedRectangleBorder(
