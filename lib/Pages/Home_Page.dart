@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shopping/Pages/Product_Page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -36,7 +37,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10),
-              Container(height: 340, child: ProdutoLista()),
+              Container(height: 340, child: ProdutoLista(context)),
             ],
           ),
         ),
@@ -121,16 +122,21 @@ Widget CategoriaItem(IconData icon) {
   );
 }
 
-Widget ProdutoLista() {
+Widget ProdutoLista(BuildContext context) {
   return Container(
     child: ListView(
       scrollDirection: Axis.horizontal,
-      children: [ProdutoItem(), ProdutoItem(), ProdutoItem(), ProdutoItem()],
+      children: [
+        ProdutoItem(context),
+        ProdutoItem(context),
+        ProdutoItem(context),
+        ProdutoItem(context),
+      ],
     ),
   );
 }
 
-Widget ProdutoItem() {
+Widget ProdutoItem(BuildContext context) {
   return Container(
     padding: EdgeInsets.all(10),
     margin: EdgeInsets.only(right: 10),
@@ -139,11 +145,19 @@ Widget ProdutoItem() {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Image.network(
-          "https://raw.githubusercontent.com/balta-io/7185/refs/heads/master/assets/product-1.png",
-          height: 180,
-          width: 180,
-          fit: BoxFit.cover,
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProductPage()),
+            );
+          },
+          child: Image.network(
+            "https://raw.githubusercontent.com/balta-io/7185/refs/heads/master/assets/product-1.png",
+            height: 180,
+            width: 180,
+            fit: BoxFit.cover,
+          ),
         ),
         SizedBox(height: 10),
         Container(
