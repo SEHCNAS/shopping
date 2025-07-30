@@ -103,14 +103,7 @@ class LoginPage extends StatelessWidget {
                       Container(
                         width: double.infinity,
                         child: TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HomePage(),
-                              ),
-                            );
-                          },
+                          onPressed: () {},
                           style: TextButton.styleFrom(
                             backgroundColor: Colors.white,
                             shape: const RoundedRectangleBorder(
