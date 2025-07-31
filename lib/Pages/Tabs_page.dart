@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/Pages/Cart_page.dart';
-import 'package:shopping/Pages/Home_Page.dart';
-import 'package:shopping/Pages/Login_Page.dart';
+import 'package:shopping/Pages/cart_page.dart';
+import 'package:shopping/Pages/home_page.dart';
+import 'package:shopping/Pages/login_page.dart';
 
 class TabsPage extends StatelessWidget {
   const TabsPage({super.key});

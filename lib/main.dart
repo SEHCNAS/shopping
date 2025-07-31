@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping/Pages/Tabs_page.dart';
+import 'package:shopping/Pages/tabs_page.dart';
 
 void main() {
   runApp(const MainApp());

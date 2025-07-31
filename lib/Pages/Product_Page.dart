@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ProductPage extends StatelessWidget {
-  const ProductPage({super.key});
+  final String imageURL;
+  final String titulo;
+  final String marca;
+
+  const ProductPage({
+    super.key,
+    required this.imageURL,
+    required this.titulo,
+    required this.marca,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +26,7 @@ class ProductPage extends StatelessWidget {
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
-                background: Image.network(
-                  "https://raw.githubusercontent.com/balta-io/7185/refs/heads/master/assets/product-1.png",
-                  fit: BoxFit.cover,
-                ),
+                background: Image.network(imageURL, fit: BoxFit.cover),
               ),
             ),
           ];
@@ -32,7 +38,7 @@ class ProductPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus risus augue",
+                  titulo,
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
@@ -45,7 +51,7 @@ class ProductPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
-                  "Nome do  vendedor do produto 1",
+                  marca,
                   style: TextStyle(
                     fontSize: 15,
                     overflow: TextOverflow.ellipsis,
