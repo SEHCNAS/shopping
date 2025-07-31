@@ -38,6 +38,5 @@ class CategoriaLista extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }

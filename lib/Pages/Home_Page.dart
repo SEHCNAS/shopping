@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:shopping/Widgets/Categoria/categoria_lista.dart';
 import 'package:shopping/Widgets/Pesquisar_Barra.dart';
-import 'package:shopping/Widgets/Produto/produto_item.dart';
 import 'package:shopping/Widgets/Produto/produto_lista.dart';
 
 class HomePage extends StatelessWidget {
