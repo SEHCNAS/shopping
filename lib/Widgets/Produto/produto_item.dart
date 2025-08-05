@@ -21,7 +21,7 @@ class ProdutoItem extends StatelessWidget {
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.only(right: 10),
       width: 180,
-      color: Colors.white,
+
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -66,11 +66,7 @@ class ProdutoItem extends StatelessWidget {
           SizedBox(height: 5),
           Text(
             preco.toStringAsFixed(2),
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.green,
-            ),
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ],
       ),

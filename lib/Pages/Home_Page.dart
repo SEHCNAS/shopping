@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(15),
           width: double.infinity,
-          color: const Color.fromRGBO(170, 232, 228, 1),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[

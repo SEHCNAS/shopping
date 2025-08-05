@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping/themes/light_theme.dart';
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -12,7 +13,7 @@ class CartPage extends StatelessWidget {
           Expanded(child: Container(child: ProductList())),
           Container(
             height: 80,
-            color: Colors.grey,
+
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -21,12 +22,11 @@ class CartPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Total", style: TextStyle(color: Colors.white)),
+                      Text("Total"),
                       SizedBox(height: 5),
                       Text(
                         "\$ 100,00",
                         style: TextStyle(
-                          color: Colors.green,
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
@@ -42,16 +42,11 @@ class CartPage extends StatelessWidget {
                     child: TextButton(
                       onPressed: () {},
                       style: TextButton.styleFrom(
-                        backgroundColor: Colors.green,
-
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(0),
                         ),
                       ),
-                      child: Text(
-                        "Comprar",
-                        style: TextStyle(color: Colors.white),
-                      ),
+                      child: Text("Comprar"),
                     ),
                   ),
                 ),
@@ -97,13 +92,12 @@ Widget ProductItem() {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Titulo do Produto"),
-              Text("R\$ 100,00", style: TextStyle(color: Colors.green)),
+              Text("R\$ 100,00"),
               SizedBox(height: 10),
               Container(
                 height: 40,
                 width: 120,
                 decoration: BoxDecoration(
-                  color: Colors.green,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Row(

@@ -6,19 +6,16 @@ class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(170, 232, 228, 1),
-        elevation: 0,
-      ),
+      appBar: AppBar(elevation: 0),
       body: SingleChildScrollView(
         child: Container(
-          color: const Color.fromRGBO(170, 232, 228, 1),
           padding: EdgeInsets.only(top: 80, left: 20, right: 20, bottom: 40),
           child: Column(
             children: <Widget>[
               Container(
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(215, 244, 237, 1),
+                  color: Theme.of(context).colorScheme.surface,
+
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black12,
@@ -56,7 +53,6 @@ class SignupPage extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: "Name",
                           labelStyle: TextStyle(
-                            color: Colors.black54,
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                           ),
@@ -71,7 +67,6 @@ class SignupPage extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: "Email",
                           labelStyle: TextStyle(
-                            color: Colors.black54,
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                           ),
@@ -86,7 +81,6 @@ class SignupPage extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: "Senha",
                           labelStyle: TextStyle(
-                            color: Colors.black54,
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                           ),
@@ -99,7 +93,6 @@ class SignupPage extends StatelessWidget {
                         child: TextButton(
                           onPressed: () {},
                           style: TextButton.styleFrom(
-                            backgroundColor: Colors.white,
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(
                                 Radius.circular(5),

@@ -24,7 +24,7 @@ class CategoriaItem extends StatelessWidget {
         ],
         borderRadius: BorderRadius.all(Radius.circular(45)),
       ),
-      child: Icon(icon, color: Colors.black54, size: 20),
+      child: Icon(icon, size: 20),
     );
   }
 }

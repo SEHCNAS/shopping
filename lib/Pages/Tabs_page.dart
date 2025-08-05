@@ -10,10 +10,7 @@ class TabsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: TabBarView(children: [HomePage(), CartPage(), LoginPage()]),
-      bottomNavigationBar: new TabBar(
-        labelColor: Colors.green,
-        unselectedLabelColor: Colors.black54,
-        indicatorColor: Colors.green,
+      bottomNavigationBar: TabBar(
         indicatorSize: TabBarIndicatorSize.label,
         tabs: [
           Tab(icon: Icon(Icons.home), text: "Home"),

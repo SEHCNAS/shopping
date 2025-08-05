@@ -10,14 +10,13 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          color: const Color.fromRGBO(170, 232, 228, 1),
           padding: EdgeInsets.only(top: 80, left: 20, right: 20, bottom: 40),
           child: Column(
             children: <Widget>[
               Container(
                 height: 450,
                 decoration: BoxDecoration(
-                  color: Color.fromRGBO(215, 244, 237, 1),
+                  color: Theme.of(context).colorScheme.surface,
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black12,
@@ -38,16 +37,13 @@ class LoginPage extends StatelessWidget {
                             children: <Widget>[
                               Text(
                                 "Bem-vindo",
-                                style: TextStyle(
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: Theme.of(context).textTheme.titleLarge,
                               ),
                               Text("Faça login para continuar"),
                             ],
                           ),
                           TextButton(
-                            child: Text("Criar conta"),
+                            child: Text("Criar conta", style: TextStyle()),
                             onPressed: () {
                               Navigator.push(
                                 context,
@@ -67,7 +63,6 @@ class LoginPage extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: "Email",
                           labelStyle: TextStyle(
-                            color: Colors.black54,
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                           ),
@@ -82,7 +77,6 @@ class LoginPage extends StatelessWidget {
                         decoration: InputDecoration(
                           labelText: "Senha",
                           labelStyle: TextStyle(
-                            color: Colors.black54,
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                           ),
@@ -92,7 +86,10 @@ class LoginPage extends StatelessWidget {
                       Container(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          child: Text("Esqueci minha senha"),
+                          child: Text(
+                            "Esqueci minha senha",
+                            style: TextStyle(),
+                          ),
                           onPressed: () {
                             // Implementar ação de esqueci minha senha
                           },
@@ -104,7 +101,6 @@ class LoginPage extends StatelessWidget {
                         child: TextButton(
                           onPressed: () {},
                           style: TextButton.styleFrom(
-                            backgroundColor: Colors.white,
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(
                                 Radius.circular(5),
@@ -133,7 +129,6 @@ class LoginPage extends StatelessWidget {
                   icon: Icon(FontAwesomeIcons.google),
                   label: const Text('Realizar login com Google'),
                   style: TextButton.styleFrom(
-                    backgroundColor: Colors.white,
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                     ),
@@ -150,7 +145,6 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(fontSize: 16),
                   ),
                   style: TextButton.styleFrom(
-                    backgroundColor: Colors.white,
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                     ),
