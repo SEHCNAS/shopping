@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+
             children: <Widget>[
               SizedBox(height: 50),
               PesquisarBarra(),

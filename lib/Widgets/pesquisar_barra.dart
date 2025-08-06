@@ -1,44 +1,54 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-class PesquisarBarra extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:shopping/Widgets/input_animado.dart';
+
+class PesquisarBarra extends StatefulWidget {
   const PesquisarBarra({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(20)),
-        color: Colors.white,
-      ),
-      height: 50,
-      padding: EdgeInsets.only(left: 10),
-      child: Row(
-        children: <Widget>[
-          Icon(Icons.search),
+  State<PesquisarBarra> createState() => _PesquisarBarraState();
+}
 
-          Container(
-            width: 200,
-            padding: EdgeInsets.all(10),
-            child: TextFormField(
-              keyboardType: TextInputType.text,
-              style: TextStyle(
-                color: Colors.black54,
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              ),
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "Pesquisar produtos",
-                labelStyle: TextStyle(
-                  color: Colors.black54,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
+class _PesquisarBarraState extends State<PesquisarBarra>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  bool menuAberto = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        InputAnimado(controller: _controller),
+        TextButton(
+          onPressed: () {
+            !menuAberto ? _controller.forward() : _controller.reverse();
+            menuAberto = !menuAberto;
+          },
+          child: AnimatedIcon(
+            icon: AnimatedIcons.menu_close,
+            progress: _controller,
+            semanticLabel: "Mais",
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

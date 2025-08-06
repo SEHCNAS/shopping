@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Demo",
       debugShowCheckedModeBanner: false,
-      theme: darkTheme(),
+      theme: lightTheme(),
       home: DefaultTabController(length: 3, child: TabsPage()),
     );
   }

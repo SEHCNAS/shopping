@@ -25,7 +25,10 @@ class ProductPage extends StatelessWidget {
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
-                background: Image.network(imageURL, fit: BoxFit.cover),
+                background: Hero(
+                  tag: imageURL,
+                  child: Image.network(imageURL, fit: BoxFit.cover),
+                ),
               ),
             ),
           ];

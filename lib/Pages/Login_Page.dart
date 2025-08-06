@@ -3,7 +3,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shopping/Pages/signup_Page.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  final _formKey = GlobalKey<FormState>();
+  String _email = '';
+  String _password = '';
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,89 +31,113 @@ class LoginPage extends StatelessWidget {
                 ),
                 child: Padding(
                   padding: EdgeInsets.only(left: 20, right: 20, top: 40),
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Text(
-                                "Bem-vindo",
-                                style: Theme.of(context).textTheme.titleLarge,
-                              ),
-                              Text("Faça login para continuar"),
-                            ],
-                          ),
-                          TextButton(
-                            child: Text("Criar conta", style: TextStyle()),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => SignupPage(),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Text(
+                                  "Bem-vindo",
+                                  style: Theme.of(context).textTheme.titleLarge,
                                 ),
-                              );
+                                Text("Faça login para continuar"),
+                              ],
+                            ),
+                            TextButton(
+                              child: Text("Criar conta", style: TextStyle()),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SignupPage(),
+                                  ),
+                                );
+                                // Implementar ação de esqueci minha senha
+                              },
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 60),
+                        TextFormField(
+                          //autofocus: true,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            labelText: "Email",
+                            labelStyle: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          style: TextStyle(fontSize: 20),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Digite um email";
+                            }
+                            return null;
+                          },
+                          onSaved: (input) => _email = input!,
+                        ),
+                        SizedBox(height: 10),
+                        TextFormField(
+                          //autofocus: true,
+                          keyboardType: TextInputType.emailAddress,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            labelText: "Senha",
+                            labelStyle: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          style: TextStyle(fontSize: 20),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Digite uma senha";
+                            }
+                            return null;
+                          },
+                          onSaved: (input) => _password = input!,
+                        ),
+                        SizedBox(height: 10),
+                        Container(
+                          alignment: Alignment.centerRight,
+                          child: TextButton(
+                            child: Text(
+                              "Esqueci minha senha",
+                              style: TextStyle(),
+                            ),
+                            onPressed: () {
                               // Implementar ação de esqueci minha senha
                             },
                           ),
-                        ],
-                      ),
-                      SizedBox(height: 60),
-                      TextFormField(
-                        //autofocus: true,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: InputDecoration(
-                          labelText: "Email",
-                          labelStyle: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                          ),
                         ),
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      SizedBox(height: 10),
-                      TextFormField(
-                        //autofocus: true,
-                        keyboardType: TextInputType.emailAddress,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: "Senha",
-                          labelStyle: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                          child: Text(
-                            "Esqueci minha senha",
-                            style: TextStyle(),
-                          ),
-                          onPressed: () {
-                            // Implementar ação de esqueci minha senha
-                          },
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Container(
-                        width: double.infinity,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(5),
+                        SizedBox(height: 10),
+                        Container(
+                          width: double.infinity,
+                          child: TextButton(
+                            onPressed: () {
+                              if (_formKey.currentState!.validate()) {
+                                _formKey.currentState!.save();
+                                print(_email);
+                                print(_password);
+                              }
+                            },
+                            style: TextButton.styleFrom(
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(5),
+                                ),
                               ),
                             ),
+                            child: Text("Login"),
                           ),
-                          child: Text("Login"),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

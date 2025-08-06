@@ -38,11 +38,14 @@ class ProdutoItem extends StatelessWidget {
                 ),
               );
             },
-            child: Image.network(
-              imageURL,
-              height: 180,
-              width: 180,
-              fit: BoxFit.cover,
+            child: Hero(
+              tag: imageURL,
+              child: Image.network(
+                imageURL,
+                height: 180,
+                width: 180,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(height: 10),
